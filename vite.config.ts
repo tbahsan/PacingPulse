@@ -4,21 +4,13 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: process.env.PAGES_BASE_PATH || '/',
   server: {
-    host: '0.0.0.0',
-    port: 5176,
-    allowedHosts: process.env.DEV_ALLOW_ALL_HOSTS === 'true' ? true : undefined,
-  },
-  preview: {
-    host: '0.0.0.0',
-    port: 4176,
-    allowedHosts: process.env.DEV_ALLOW_ALL_HOSTS === 'true' ? true : undefined,
-  },
-  server: {
     host: true,
+    port: 5176,
     allowedHosts: true,
   },
   preview: {
     host: true,
+    port: 4176,
     allowedHosts: true,
   },
   plugins: [

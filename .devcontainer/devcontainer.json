@@ -1,0 +1,24 @@
+{
+  "name": "PacingPulse Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  "forwardPorts": [5176, 4176],
+  "portsAttributes": {
+    "5176": {
+      "label": "PacingPulse Dev Server",
+      "onAutoForward": "openPreview"
+    },
+    "4176": {
+      "label": "PacingPulse Preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
