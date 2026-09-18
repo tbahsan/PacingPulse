@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PacingPulse — Prose Cadence &amp; Sentence Length Visualizer</title>
+    <meta
+      name="description"
+      content="Interactive sentence length, narrative pacing, and prose rhythm visualizer for writers and editors. 100% client-side and offline ready."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <div class="logo-group">
+          <h1>
+            <span>PacingPulse</span>
+            <span class="logo-badge">v0.1.0</span>
+          </h1>
+          <p class="tagline">Prose Cadence, Sentence Length &amp; Narrative Rhythm Visualizer</p>
+        </div>
+        <div class="header-actions">
+          <button id="theme-toggle" class="btn-secondary" aria-label="Toggle theme">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light Mode</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- Presets Selector -->
+      <section class="card presets-bar" aria-label="Sample Presets">
+        <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted)">Load Rhythm Preset:</span>
+        <button class="preset-pill active" data-preset="gary-provost">Gary Provost (Iconic)</button>
+        <button class="preset-pill" data-preset="action-tempo">High-Tempo Action</button>
+        <button class="preset-pill" data-preset="literary-cadence">Lyrical Atmosphere</button>
+        <button class="preset-pill" data-preset="blank">Clear / Blank</button>
+      </section>
+
+      <!-- Interactive SVG Chart Card -->
+      <section class="card" aria-label="Pacing Pulse Chart">
+        <div class="chart-header">
+          <h2 style="font-size: 1.15rem; font-weight: 700;">Sentence Length Pulse</h2>
+          <div class="legend-group">
+            <div class="legend-item"><span class="legend-dot short"></span> Short (&le;7)</div>
+            <div class="legend-item"><span class="legend-dot medium"></span> Medium (8–20)</div>
+            <div class="legend-item"><span class="legend-dot long"></span> Long (21–35)</div>
+            <div class="legend-item"><span class="legend-dot very-long"></span> Marathon (36+)</div>
+            <div class="legend-item"><span class="legend-dot trend"></span> Trendline</div>
+            <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; margin-left: 0.5rem;">
+              <input type="checkbox" id="toggle-trendline" checked />
+              <span>Trend</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- SVG Container -->
+        <div id="chart-container">
+          <!-- Dynamically populated SVG -->
+        </div>
+      </section>
+
+      <!-- Metrics Row -->
+      <section class="metrics-row" aria-label="Pacing Statistics">
+        <div class="metric-card">
+          <span class="metric-label">Total Sentences</span>
+          <span id="metric-sentences" class="metric-value">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Total Words</span>
+          <span id="metric-words" class="metric-value">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Avg Sentence Length</span>
+          <span id="metric-avg" class="metric-value">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Rhythm Variety (Std Dev)</span>
+          <span id="metric-stddev" class="metric-value">0.0</span>
+        </div>
+      </section>
+
+      <!-- Monotony & Rhythm Insights Card -->
+      <section id="monotony-card" class="card alert-card clean" aria-label="Rhythm Insights">
+        <div id="monotony-content">
+          <strong>Prose Harmony:</strong> Varied sentence structure detected. The narrative flows with natural musical cadence.
+        </div>
+      </section>
+
+      <!-- Text Editor Workspace -->
+      <section class="editor-wrapper" aria-label="Draft Editor">
+        <div class="editor-container">
+          <div class="editor-backdrop" aria-hidden="true">
+            <div id="editor-highlights"></div>
+          </div>
+          <textarea
+            id="editor-input"
+            class="editor-input"
+            placeholder="Type or paste your narrative or essay here to visualize its rhythm..."
+            spellcheck="false"
+            aria-label="Text editor for pacing analysis"
+          ></textarea>
+        </div>
+        <div class="editor-footer">
+          <div style="color: var(--text-muted); font-size: 0.85rem;">
+            💡 Hover any bar in the chart to inspect that sentence, or click to jump.
+          </div>
+          <div class="editor-actions">
+            <button id="copy-btn" class="btn-action" title="Copy clean text">📋 Copy</button>
+            <button id="download-csv-btn" class="btn-action" title="Download sentence word count data">📊 Export CSV</button>
+            <button id="download-txt-btn" class="btn-action" title="Download text file">💾 Download TXT</button>
+            <button id="clear-btn" class="btn-action" title="Clear editor">🗑️ Clear</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Storage Policy -->
+      <section class="card privacy-box">
+        <label>
+          <input type="checkbox" id="opt-in-storage" />
+          <span>Save draft locally in this browser (LocalStorage)</span>
+        </label>
+        <div>
+          <button id="clear-draft-btn" class="btn-secondary" style="font-size: 0.78rem">
+            Delete Saved Draft
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          PacingPulse — Client-side prose rhythm and cadence visualizer. Zero analytics, no server backend.
+        </p>
+        <p class="footer-credit">
+          Created by <a href="https://github.com/tbahsan" target="_blank" rel="noopener noreferrer">Tasneem Bin Ahsan</a> ·
+          <a href="https://github.com/tbahsan/PacingPulse" target="_blank" rel="noopener noreferrer">GitHub Repository</a> ·
+          MIT License
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

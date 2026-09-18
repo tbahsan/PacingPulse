@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gary-provost",
+    "name": "Gary Provost's Masterclass in Rhythm",
+    "description": "The iconic demonstration of sentence variety, transitioning from a monotonous 5-word drone to undulating prose music.",
+    "text": "This sentence has five words. Here are five more words. Five-word sentences are fine. But several together become monotonous. Listen to what is happening. The writing is getting boring. The sound of it drones. It’s like a stuck record. The ear demands some variety.\n\nNow listen. I vary the sentence length, and I create music. Music. The writing sings. It has a pleasant rhythm, a lilt, a harmony. I use short sentences. And I use sentences of medium length.\n\nAnd sometimes, when I am certain the reader is rested, I will engage him with a sentence of considerable length, a sentence that burns with energy and builds with all the impetus of a crescendo, the roll of the drums, the crash of the cymbals–sounds that say listen to this, it is important."
+  },
+  {
+    "id": "action-tempo",
+    "name": "High-Tempo Pursuit (Action Pacing)",
+    "description": "Fast-paced chase sequence illustrating staccato bursts, rapid dialogue, and sudden kinetic surges.",
+    "text": "Run. Don’t look back. The footsteps behind him were gaining speed, slapping wet against the cobblestones. He vaulted the rusty iron fence. Metal groaned. His boots struck the gravel on the other side with a jarring shock that rattled his teeth.\n\nHe pulled his collar tight against the rain. Where was the safe house? The alley ended abruptly in a brick wall. Trapped. He reached into his coat and felt the cold handle of the revolver. He waited in the dark."
+  },
+  {
+    "id": "literary-cadence",
+    "name": "Lyrical & Atmospheric (Descriptive Cadence)",
+    "description": "Rich literary description showing rolling clauses, balanced cadences, and expansive sentence architecture.",
+    "text": "The afternoon light settled across the valley like amber dust, filtering through the ancient boughs of the sycamores and warming the pale limestone walls of the forgotten chapel.\n\nA gentle wind stirred the dry reeds along the riverbank, carrying with it the faint scent of wild fennel, woodsmoke, and the cold promise of an early autumn dusk. No travelers had passed along this road since the summer harvest, leaving the wheel ruts overgrown with dandelion and thistle. In the quiet distance, church bells chimed three slow notes across the mist."
+  }
+]
